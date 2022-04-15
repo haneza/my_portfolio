@@ -1,0 +1,15 @@
+.copyright.app__flex {
+  width: 100%;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  background-color: var(--secondary-color);
+
+  p {
+    text-transform: uppercase;
+    color: var(--white-color);
+  }
+}

@@ -1,0 +1,277 @@
+#home {
+  position: relative;
+  background: url("../../assets/bgIMG.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+
+  // disable the default padding styles
+  .app__wrapper {
+    padding: 0;
+
+    .copyright {
+      display: none;
+    }
+  }
+}
+
+.app__header {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+
+  padding: 6rem 2rem 0rem;
+
+  @media screen and (min-width: 2000px) {
+    padding-top: 8rem;
+  }
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 450px) {
+    padding: 6rem 1rem 2rem;
+  }
+}
+
+.app__header-info {
+  // flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  // height: 100%;
+
+  margin: 0 2rem;
+
+  @media screen and (max-width: 450px) {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+    margin-right: 0rem;
+  }
+}
+
+.app__header-badge {
+  width: 100%;
+  display: flex;
+  position: relative;
+
+  flex-direction: column;
+
+  .badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: 1200px) {
+      justify-content: left;
+    }
+  }
+
+  .tag-cmp {
+    flex-direction: column;
+    margin-top: 3rem;
+
+    @media screen and (min-width: 1024px) {
+      margin-top: 1rem;
+    }
+
+    p {
+    }
+
+    .intro {
+      @media screen and (max-width: 700px) {
+        text-align: center;
+        align-items: center;
+        width: 300px;
+        color: #3b4f7dbf;
+        font-weight: 600;
+        font-size: 0.8rem;
+        line-height: 1.5;
+      }
+      @media screen and (min-width: 700px) {
+        font-size: 14px;
+      }
+    }
+  }
+  .title {
+    display: flex;
+    justify-content: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: var(--secondary-color);
+    @media screen and (min-width: 700px) {
+      font-size: 1.8rem;
+    }
+    @media screen and (min-width: 1024px) {
+      justify-content: left;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    align-items: center;
+  }
+}
+
+.button {
+  padding: 10px 28px;
+  border-radius: 30px;
+  border: none;
+  background-color: var(--secondary-color);
+
+  font-weight: 500;
+  color: var(--white-color);
+  outline: none;
+  margin: 2rem 0 0 0;
+  font-family: var(--font-base);
+
+  transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 185px;
+  height: 44px;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    background-color: var(--primary-color);
+  }
+
+  &:before {
+    height: 8px;
+    width: 8px;
+    left: -8px;
+    top: 6px;
+    border-radius: 50%;
+    transition: left 0.2s ease;
+  }
+
+  &:after {
+    height: 8px;
+    width: 8px;
+    right: -10px;
+    bottom: 6px;
+    border-radius: 50%;
+    transition: right 0.2s ease;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    animation: spin 2s linear infinite;
+  }
+  &:hover:before {
+    left: 14px;
+  }
+
+  &:hover:after {
+    right: 14px;
+  }
+}
+
+.app__header-circles {
+  flex: 0.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  height: 100%;
+  margin-left: 1rem;
+
+  div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    background: var(--white-color);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+    img {
+      width: 60%;
+      height: 60%;
+    }
+  }
+
+  // circles with different height & width
+
+  div:nth-child(1) {
+    width: 100px;
+    height: 100px;
+  }
+
+  div:nth-child(2) {
+    margin: 1.75rem;
+    width: 150px;
+    height: 150px;
+  }
+
+  div:nth-child(3) {
+    width: 70px;
+    height: 70px;
+  }
+
+  @media screen and (min-width: 2000px) {
+    div:nth-child(2) {
+      width: 400px;
+      height: 400px;
+    }
+
+    div:nth-child(3) {
+      width: 170px;
+      height: 170px;
+    }
+
+    div:nth-child(1) {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 0;
+
+    div {
+      margin: 1rem;
+    }
+  }
+}
+
+.app__header-img {
+  // flex: 5;
+  // height: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+
+  img {
+    width: 100%;
+    object-fit: contain;
+    z-index: 1;
+  }
+
+  .overlay_circle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 100%;
+    height: 90%;
+  }
+  .profile-img {
+  }
+
+  @media screen and (max-width: 1200px) {
+    margin: 2rem 0;
+  }
+}
